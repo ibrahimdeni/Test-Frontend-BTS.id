@@ -111,7 +111,7 @@ function Example({ handleClose, show }) {
             <Form onSubmit={(e) => handleSubmit.mutate(e)}>
               {/* {message && message} */}
               <Form.Group className="mb-3">
-                <Form.Label className="fw-bold fs-5">Email</Form.Label>
+                <Form.Label className="fw-bold fs-5">Username</Form.Label>
                 <Form.Control
                   type="username"
                   id="username"

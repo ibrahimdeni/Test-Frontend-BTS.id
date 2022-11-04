@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 export default function NewJourney() {
   const navigate = useNavigate();
-  const [preview, setPreview] = useState(null); // preview foto
+  // const [preview, setPreview] = useState(null); // preview foto
   const [message, setMessage] = useState("");
   // const [selectedFile, setSelectedFile] = useState();
   // const [npreview, setNpreview] = useState();
@@ -26,8 +26,8 @@ export default function NewJourney() {
       ...form,
       [event.target.name]: event.target.value,
     });
-    console.log("form --->", form);
   };
+  console.log("form --->", form);
   // console.log("ini preview", preview);
 
   const handleSubmit = useMutation(async (event) => {
@@ -43,7 +43,7 @@ export default function NewJourney() {
       };
 
       const formData = new FormData();
-      formData.set(form?.name);
+      formData.set(form.value);
 
       console.log("name:", form);
 

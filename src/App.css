@@ -1,0 +1,103 @@
+/* untuk navbar */
+.icon {
+  margin-left: 5%;
+}
+
+.textdd {
+  font-weight: bold;
+}
+
+/* untuk home */
+.BGHome {
+  margin-top: -75px;
+  background-image: url(./assets/images/BGTJ.png);
+  background-size: cover;
+  width: 100%;
+}
+
+.BGTJ {
+  width: 100%;
+  height: 76vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.search-engine {
+  width: 85%;
+}
+
+.PH_home::placeholder {
+  font-weight: bold;
+  color: rgb(176, 176, 176);
+}
+
+.title-home {
+  font-size: 3.5em;
+  margin-left: 8%;
+}
+
+.text-home {
+  margin-left: 8%;
+  margin-top: 15px;
+}
+
+/* modalregister */
+.modalregister {
+  width: 30%;
+  position: fixed;
+  left: 35%;
+  /* right: 50%; */
+  /* background-color: red; */
+  align-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .modalregister {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* for profile */
+.img_profile {
+  width: 20%;
+}
+
+/* for detail */
+.title_detail {
+  margin: 2% 5%;
+}
+
+.author {
+  margin: 4% 5%;
+}
+
+.imgdtl {
+  width: 90%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.text_dtl {
+  width: 90%;
+  text-align: justify;
+  text-justify: center;
+}
+
+.tab-dtl {
+  margin-left: 40px;
+}
+
+/* for new journey */
+.title-NJ {
+  width: 90%;
+}
+.form_NJ {
+  width: 80%;
+}
+.btn_post {
+  width: 20%;
+}
+
+.Dropdown .Dropdown.Toggle::after {
+  content: none;
+}

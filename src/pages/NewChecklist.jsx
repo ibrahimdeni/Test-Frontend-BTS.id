@@ -1,19 +1,13 @@
-// import TextEditor from "../components/TextEditor";
 import Layout from "../components/NavigationBar";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useMutation } from "react-query";
 import { API } from "../config/api";
 import { useState, useEffect } from "react";
-import Alert from "react-bootstrap/Alert";
 import Swal from "sweetalert2";
 
 export default function NewJourney() {
   const navigate = useNavigate();
-  // const [preview, setPreview] = useState(null); // preview foto
-  const [message, setMessage] = useState("");
-  // const [selectedFile, setSelectedFile] = useState();
-  // const [npreview, setNpreview] = useState();
   const [form, setForm] = useState({
     name: "",
   });
@@ -27,8 +21,7 @@ export default function NewJourney() {
       [event.target.name]: event.target.value,
     });
   };
-  console.log("form --->", form);
-  // console.log("ini preview", preview);
+  // console.log("form --->", form);
 
   const handleSubmit = useMutation(async (event) => {
     try {
@@ -37,17 +30,14 @@ export default function NewJourney() {
       // Configuration Content-type
       const config = {
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.token}`,
         },
       };
 
-      const formData = new FormData();
-      formData.set(form.value);
-
       console.log("name:", form);
 
-      const response = await API.post("/checklist", formData, config);
+      const response = await API.post("/checklist", form, config);
       console.log("IKI RESEKPON 2", response);
       Swal.fire({
         icon: "success",
@@ -59,12 +49,11 @@ export default function NewJourney() {
 
       // Handling response here
     } catch (error) {
-      const alert = (
-        <Alert variant="danger" className="py-1">
-          Failed
-        </Alert>
-      );
-      setMessage(alert);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Failed to create new Checklist!",
+      });
       console.log(error);
     }
   });

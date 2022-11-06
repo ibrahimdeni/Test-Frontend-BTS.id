@@ -1,6 +1,4 @@
 import { Button, Container, Navbar } from "react-bootstrap";
-import iconTJ from "../assets/icons/icontj.png";
-import Icontj from "../assets/icons/icontjb.png";
 import { useState } from "react";
 import LoginModal from "./modal/LoginModal";
 import RegisterModal from "./modal/RegisterModal";
@@ -9,9 +7,7 @@ import React, { useContext } from "react";
 import { Dropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import userPhoto from "../assets/icons/userddnew.png";
-import userdd from "../assets/icons/userdd.png";
 import daundd from "../assets/icons/daundd.png";
-import pitadd from "../assets/icons/pitadd.png";
 import logoutdd from "../assets/icons/logoutdd.png";
 import Swal from "sweetalert2";
 
@@ -20,8 +16,8 @@ function NavBar() {
   const isLogin = state.isLogin;
   let navigate = useNavigate();
 
-  console.log("ini state user", state);
-  console.log("state Login", isLogin);
+  // console.log("ini state user", state);
+  // console.log("state Login", isLogin);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -29,7 +25,7 @@ function NavBar() {
     setShow(true);
     setShowR(false);
   };
-  console.log("showwww", show);
+  // console.log("showwww", show);
 
   const [registerShow, setShowR] = useState(false);
   const handleCloseR = () => setShowR(false);
@@ -37,7 +33,7 @@ function NavBar() {
     setShowR(true);
     setShow(false);
   };
-  console.log("rshow", registerShow);
+  // console.log("rshow", registerShow);
 
   const logout = () => {
     dispatch({

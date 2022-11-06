@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 // import Layout from "./widget/layout";
 import Home from "./pages/Home";
 import NewChecklist from "./pages/NewChecklist";
+// import Detail from "./pages/DetailChecklist";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./context/useContext";
 import { API } from "./config/api";
@@ -24,14 +25,6 @@ function App() {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
-    // Redirect Auth
-    // if (state.isLogin === false) {
-    //   navigate("/");
-    // } else {
-    //   if (state.user.role === "Customer") {
-    //     navigate("/");
-    //   }
-    // }
   }, [state]);
 
   const checkUser = async () => {
@@ -39,11 +32,11 @@ function App() {
       const response = await API.post("/login");
 
       // If the token incorrect
-      if (response.status === 404) {
-        return dispatch({
-          type: "AUTH_ERROR",
-        });
-      }
+      // if (response.status === 404) {
+      //   return dispatch({
+      //     type: "AUTH_ERROR",
+      //   });
+      // }
 
       // Get user data
       let payload = response.data.data;
@@ -70,6 +63,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newchecklist" element={<NewChecklist />} />
+        {/* <Route path="/detailchecklist" element={<Detail />} /> */}
       </Routes>
     </>
   );
